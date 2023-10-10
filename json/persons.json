@@ -1,0 +1,4 @@
+[
+{ "id": 123456789, "fname": "John", "sname": "Smith", "projects": ["ProductX", "ProductY"] },
+{ "id": 333445555, "fname": "Franklin", "sname": "Wong", "projects": ["ProductX"] }
+]
