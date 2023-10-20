@@ -5,7 +5,9 @@ import certifi
 
 ca = certifi.where()
 
-uri = "mongodb+srv://marko:ChulaDS2566@cluster0.q5fe942.mongodb.net/?retryWrites=true&w=majority"
+uname = input("uname: ")
+pw = input("pw: ")
+uri = "mongodb+srv://"+unamie+":"+pw+"@cluster0.q5fe942.mongodb.net/?retryWrites=true&w=majority"
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
@@ -17,3 +19,5 @@ try:
 except Exception as e:
     print(e)
 
+#for db_info in client.list_database_names():
+#   print(db_info)
