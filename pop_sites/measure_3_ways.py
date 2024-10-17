@@ -33,7 +33,7 @@ with open(csv_file, 'r', newline='') as file:
 #Get 10% of the second column into a list
 mylist = []
 for i in range(int(rows/10)):
-    randelem = random.randint(0,rows)
+    randelem = random.randint(0, rows-1)
     pickthis = csv_data[randelem][1]
     mylist.append(pickthis)
 
@@ -49,7 +49,7 @@ for elem in mylist:
 print(found)
 end_time = time.time()
 execution_time_ms = (end_time - start_time) * 1000
-print(f"#1 execution time: {execution_time_ms:.2f} milliseconds")   
+print(f"#1 scan one by one execution time: {execution_time_ms:.2f} milliseconds")   
 
 #Way 2: Sort the csv data and use binsearch
 sorted_csv_data = sorted(csv_data, key=lambda x: x[1])
@@ -62,7 +62,7 @@ for elem in mylist:
 print(found)
 end_time = time.time()
 execution_time_ms = (end_time - start_time) * 1000
-print(f"#2 execution time: {execution_time_ms:.2f} milliseconds")
+print(f"#2 sort, then scan execution time: {execution_time_ms:.2f} milliseconds")
 
 #Way 3: Use a dictionary
 mydict = {}
@@ -78,4 +78,4 @@ for elem in mylist:
 print(found)
 end_time = time.time()
 execution_time_ms = (end_time - start_time) * 1000
-print(f"#3 execution time: {execution_time_ms:.2f} milliseconds")
+print(f"#3 dictionary execution time: {execution_time_ms:.2f} milliseconds")
